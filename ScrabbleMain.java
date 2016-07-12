@@ -246,10 +246,18 @@ public class ScrabbleMain{
 		return map;
 	}
 
+	/**
+	* Gets score of given word
+	* @param HashMap string charArray
+	*/
 	public static int getScore(HashMap<Character,Integer> map, String word, char[] letters){
+		//create score variable
 		int score = 0;
 
+		//loop through letters a-z
 		for(int i = 97; i < 123; i++){
+			//count1 gets frequency of current letter in word
+			//count2 gets frequency of current letter in char array
 			int count1 = 0, count2 = 0;
 
 			for(int j = 0; j < word.length(); j++){
@@ -262,9 +270,11 @@ public class ScrabbleMain{
 					count2++;
 			}
 
+			//score = score + (point value of letter x minimum of 2 frequencies...
+			//        so that spaces aren't given points)
 			score += (map.get((char)i))*(Math.min(count1,count2));
 		}
-
+		//return score
 		return score;
 	}
 }
