@@ -270,8 +270,8 @@ public class ScrabbleMain{
 					count2++;
 			}
 
-			//score = score + (point value of letter x minimum of 2 frequencies...
-			//        so that spaces aren't given points)
+			//score = score + point value of letter multiplied by minimum of 2 frequencies
+			//        					(so that spaces aren't given points)
 			score += (map.get((char)i))*(Math.min(count1,count2));
 		}
 		//return score
